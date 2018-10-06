@@ -9,13 +9,20 @@ app.prepare()
     .then(() => {
         const server = express();
 
+        // Server Side Support for Clean URLs
+        server.get('/p/:id', (req, res) => {
+            const actualPage = '/post'
+            const queryParams = { title: req.params.id } 
+            app.render(req, res, actualPage, queryParams)
+        });
+
         // * means Handle all routes 
         server.get('*', (req, res) => {
             return handle(req, res);
         });
 
         // Launch the server
-        app.listen(3000, (err) => {
+        server.listen(3000, (err) => {
             if (err) throw err;
             console.log('http://localhost:3000');
         })

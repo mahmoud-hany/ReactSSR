@@ -4,10 +4,9 @@
   "description": "This is my first nextjs project",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "start": "next start",
+    "dev": "node server",
     "build": "next buid",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production node server"
   },
   "keywords": [],
   "author": "Mahmoud Hany",
