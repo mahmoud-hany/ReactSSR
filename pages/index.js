@@ -1,13 +1,24 @@
-// This is the Link API
-import Link from 'next/link'
+import Link from 'next/link';
+import Layout from '../components/MyLayout';
 
-const Index = () => (
-  <div>
-    <Link href="/about" >
-      <button style={{fontSize: 20, textDecoration: 'none'}}>About Page</button>
-    </Link>
-    <p>Hello Next.js</p>
-  </div>
+const PostLink = (props) => {
+  console.log(props);
+  return (
+    <li>
+      <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
+        <a>{props.title}</a>
+      </Link>
+    </li>
+  )
+};
+
+export default () => (
+  <Layout>
+    <h1>My Blog</h1>
+    <ul>
+      <PostLink title="Hello Next.js"/>
+      <PostLink title="Learn Next.js is awesome"/>
+      <PostLink title="Deploy apps with Zeit"/>
+    </ul>
+  </Layout>
 )
-
-export default Index

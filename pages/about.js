@@ -1,14 +1,12 @@
 import React from 'react';
-import Link from 'next/link';
+import Layout from '../components/MyLayout';
 
 const name = () => {
     return (
-       <div>
-            <Link href="/">
-                <a>Home</a>
-            </Link>
+        <Layout>    
             <h1>About page is Here</h1>
-       </div>
+        </Layout>
+      
     );
 };
 
